@@ -6,7 +6,7 @@ import datetime
 import asyncio
 
 
-class Ping:
+class JStatus:
     """Status"""
 
     def __init__(self,bot):
@@ -29,4 +29,4 @@ class Ping:
 
 
 def setup(bot):
-    bot.add_cog(Ping(bot))
+    bot.add_cog(JStatus(bot))
