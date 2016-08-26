@@ -6,7 +6,7 @@ class JCounter:
     """Displays how many channels and roles are in a server."""
     def __init__(self, bot):
         self.bot = bot
-
+#Original Code by Discordian. Remade Majorly by Jay
 
     @commands.command(pass_context=True, no_pm=True)
     async def counter(self, ctx):
