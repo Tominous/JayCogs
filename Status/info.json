@@ -1,0 +1,7 @@
+{
+    "AUTHOR" : "Jay",
+    "INSTALL_MSG" : "Thanks for installing my status cog! To use: [p]status",
+    "NAME" : "JStatus",
+    "SHORT" : "[p]status - Shows simple stats of the server and bot.",
+    "DESCRIPTION" : "[p]status - Shows simple stats of the server and bot."
+}
