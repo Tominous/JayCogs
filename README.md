@@ -1,1 +1,1 @@
-# JayCogs
+# JayCogs for RedBot
