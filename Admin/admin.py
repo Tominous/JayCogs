@@ -29,4 +29,4 @@ class JAdmin:
 
 
 def setup(bot):
-    bot.add_cog(JStatus(bot))
+    bot.add_cog(JAdmin(bot))
