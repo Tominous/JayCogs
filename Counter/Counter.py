@@ -9,7 +9,7 @@ class JCounter:
 
 
     @commands.command(pass_context=True, no_pm=True)
-    async def serverstats(self, ctx):
+    async def counter(self, ctx):
         """Displays how many channels and roles are in a server."""
         await self.bot.say("***Calculating***")
         await self.bot.say("**Roles:** {}".format(len(ctx.message.server.roles)))
