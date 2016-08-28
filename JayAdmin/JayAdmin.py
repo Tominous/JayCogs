@@ -24,14 +24,14 @@ class JAdmin:
         await asyncio.sleep(2)
         await self.bot.say("**Ping:** ``{}ms``\n**Up Time:** ``{}``\n**Members:** ``{}``\n**Roles:** ``{}``\n**Channels:** ``{}``".format(round((t2-t1)*1000), up, len(ctx.message.server.members), len(ctx.message.server.roles), len(ctx.message.server.channels)))
 
-    @commands.group(pass_context=True, no_pm=True)
+    @commands.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(administrator=True)
     async def promote(self, ctx, role: discord.Role, user: discord.Member):
         """Gives a role to a user"""
         await self.bot.add_roles(user, role)
         await self.bot.say("I added ``{}`` to {}!".format(role, user))
         
-    @commands.group(pass_context=True, no_pm=True)
+    @commands.command(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(administrator=True)
     async def demote(self, ctx, role: discord.Role, user: discord.Member):
         """Removes a role from a user"""
