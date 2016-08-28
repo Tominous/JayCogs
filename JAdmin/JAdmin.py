@@ -29,7 +29,7 @@ class JAdmin:
         current = ctx.message.server.roles
         role = discord.utils.get(current, name=role)
         await self.bot.add_roles(user, role)
-        await self.bot.say("Added role "{}" to {}!".format(role, user))
+        await self.bot.say("Added role ``{}`` to {}!".format(role, user))
 
 
 def setup(bot):
