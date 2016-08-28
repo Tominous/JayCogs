@@ -12,8 +12,8 @@ class JAdmin:
         self.bot = bot
         
     @commands.command(pass_context=True)
-    async def serverstats(self,ctx):
-        """Shows basic stats for about the bot and server"""
+    async def binfo(self,ctx):
+        """Basic stats about the bot and server"""
         channel = ctx.message.channel
         t1 = time.perf_counter()
         await self.bot.send_typing(channel)
@@ -22,6 +22,14 @@ class JAdmin:
         up = str(datetime.timedelta(seconds=up))
         await self.bot.say("***Calculating...***")
         await self.bot.say("``**Ping:** ``{}ms``\n**Up Time:** ``{}``\n**Members:** ``{}``\n**Roles:** ``{}``\n**Channels:** ``{}``".format(round((t2-t1)*1000), up, len(ctx.message.server.members), len(ctx.message.server.roles), len(ctx.message.server.channels)))
+
+    @commands.command(pass_context=True)
+    @checks.is.serverowner()
+    async def promote(self, ctx, role, user : discord.Member):
+        current = ctx.message.server.roles
+        role = discord.utils.get(current, name=role)
+        await self.bot.add_roles(user, role)
+        await self.bot.say("Added role "{}" to {}!".format(role, user))
 
 
 def setup(bot):
