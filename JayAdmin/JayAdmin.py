@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 import asyncio
 import time
-from __main__ import send_cmd_help
 import datetime
 from .utils import checks
 
