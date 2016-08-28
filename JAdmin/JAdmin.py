@@ -21,7 +21,7 @@ class JAdmin:
         up = str(datetime.timedelta(seconds=up))
         await self.bot.send_typing(channel)
         await self.bot.say("***Calculating...")
-        await self.bot.say("```**ping:** ``{}ms``\n**Up Time:** ``{}``\n**Members:** ``{}``\n**Roles:** ``{}``\n**Channels:** ``{}``".format(round((t2-t1)*1000), up, len(ctx.message.server.members), len(ctx.message.server.roles), len(ctx.message.server.channels)))
+        await self.bot.say("``**ping:** ``{}ms``\n**Up Time:** ``{}``\n**Members:** ``{}``\n**Roles:** ``{}``\n**Channels:** ``{}``".format(round((t2-t1)*1000), up, len(ctx.message.server.members), len(ctx.message.server.roles), len(ctx.message.server.channels)))
 
 
 def setup(bot):
