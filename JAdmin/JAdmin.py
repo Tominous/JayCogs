@@ -11,8 +11,8 @@ class JAdmin:
     def __init__(self,bot):
         self.bot = bot
         
-      @commands.command(pass_context=True)
-        async def serverstats(self,ctx):
+    @commands.command(pass_context=True)
+    async def serverstats(self,ctx):
         """Shows basic stats for about the bot and server"""
         channel = ctx.message.channel
         t1 = time.perf_counter()
