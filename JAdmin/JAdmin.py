@@ -22,6 +22,7 @@ class JAdmin:
         up = abs(self.bot.uptime - int(time.perf_counter()))
         up = str(datetime.timedelta(seconds=up))
         await self.bot.say("***Calculating...***")
+        await asyncio.sleep(2)
         await self.bot.say("``**Ping:** ``{}ms``\n**Up Time:** ``{}``\n**Members:** ``{}``\n**Roles:** ``{}``\n**Channels:** ``{}``".format(round((t2-t1)*1000), up, len(ctx.message.server.members), len(ctx.message.server.roles), len(ctx.message.server.channels)))
 
     @commands.group(pass_context=True, no_pm=True)
