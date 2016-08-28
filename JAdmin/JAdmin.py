@@ -12,7 +12,7 @@ class JAdmin:
         self.bot = bot
         
       @commands.command(pass_context=True)
-    async def serverstats(self,ctx):
+        async def serverstats(self,ctx):
         """Shows basic stats for about the bot and server"""
         channel = ctx.message.channel
         t1 = time.perf_counter()
@@ -20,12 +20,7 @@ class JAdmin:
         t2 = time.perf_counter()
         up = abs(self.bot.uptime - int(time.perf_counter()))
         up = str(datetime.timedelta(seconds=up))
-        await self.bot.say("**Calculating**\n")
-        await self.bot.say("***Ping:** ``{}``ms".format(round((t2-t1)*1000)))
-        await self.bot.say("**Uptime:** ``{}``".format(up))
-        await self.bot.say("**Members:** ``{}``".format(len(ctx.message.server.members)))
-        await self.bot.say("**Roles:** {}".format(len(ctx.message.server.roles)))
-        await self.bot.say("**Channels:** {}".format(len(ctx.message.server.channels)))
+        await self.bot.say("```xl\nping: {}ms\nup time: {}\nmembers: {}\nroles: {}\nchannels: {}```".format(round((t2-t1)*1000)), up, len(ctx.message.server.members), len(ctx.message.server.roles), len(ctx.message.server.channels))
 
 
 def setup(bot):
