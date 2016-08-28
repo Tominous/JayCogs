@@ -23,8 +23,8 @@ class JAdmin:
         await self.bot.say("***Calculating...***")
         await self.bot.say("``**Ping:** ``{}ms``\n**Up Time:** ``{}``\n**Members:** ``{}``\n**Roles:** ``{}``\n**Channels:** ``{}``".format(round((t2-t1)*1000), up, len(ctx.message.server.members), len(ctx.message.server.roles), len(ctx.message.server.channels)))
 
-    @commands.command(pass_context=True)
-    @checks.is.serverowner()
+    @commands.group(pass_context=True, no_pm=True)
+    @checks.serverowner_or_permissions(administrator=True)
     async def promote(self, ctx, role, user : discord.Member):
         current = ctx.message.server.roles
         role = discord.utils.get(current, name=role)
