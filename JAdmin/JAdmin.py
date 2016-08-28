@@ -4,7 +4,7 @@ import asyncio
 import time
 from __main__ import send_cmd_help
 import datetime
-from .cogs.utils import checks
+from .utils import checks
 
 class JAdmin:
     """Simple admin commands."""
