@@ -47,7 +47,7 @@ class JAdmin:
         await self.bot.say("I am currently starting to add everyone to ``{}``".format(role))
         roletoadd = discord.utils.get(ctx.message.server.role, name=role)
         for member in ctx.message.server.members:
-            await self.bot.add_roles(member, roletoadd)
+        await self.bot.add_roles(member, roletoadd)
         await self.bot.say("Added role ``{}`` to everyone.".format(role)
         
     @commands.command(pass_context=True, no_pm=True)
@@ -57,7 +57,7 @@ class JAdmin:
         await self.bot.say("I am currently starting to add everyone to ``{}``".format(role))
         roletoadd = discord.utils.get(ctx.message.server.role, name=role)
         for member in ctx.message.server.members:
-            await self.bot.remove_roles(member, roletoadd)
+        await self.bot.remove_roles(member, roletoadd)
         await self.bot.say("Added role ``{}`` to everyone.".format(role)
     
 
