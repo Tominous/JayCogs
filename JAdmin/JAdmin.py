@@ -27,13 +27,13 @@ class JAdmin:
 
     @commands.group(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(administrator=True)
-    async def promote(self, ctx, role: discord.Role, user: discord.Member)
+    async def promote(self, ctx, role: discord.Role, user: discord.Member):
         await self.bot.add_roles(user, role)
         await self.bot.say("I added ``{}`` to {}!".format(role, user))
         
     @commands.group(pass_context=True, no_pm=True)
     @checks.serverowner_or_permissions(administrator=True)
-    async def demote(self, ctx, role: discord.Role, user: discord.Member)
+    async def demote(self, ctx, role: discord.Role, user: discord.Member):
         await self.bot.remove_roles(user, role)
         await self.bot.say("I removed ``{}`` from {}!".format(role, user))
 
