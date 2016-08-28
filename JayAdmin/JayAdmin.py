@@ -37,6 +37,8 @@ class JAdmin:
         """Removes a role from a user"""
         await self.bot.remove_roles(user, role)
         await self.bot.say("I removed ``{}`` from {}!".format(role, user))
+        
+    #Thanks to Discordian for the help with MassPromote/MassDemote
 
 
 
