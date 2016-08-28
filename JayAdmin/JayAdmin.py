@@ -11,7 +11,7 @@ class JAdmin:
     def __init__(self,bot):
         self.bot = bot
         
-    @commands.command(pass_context=True)
+    @commands.command(pass_context=True, no_pm=True)
     async def binfo(self,ctx):
         """Basic stats about the bot and server"""
         channel = ctx.message.channel
@@ -39,6 +39,27 @@ class JAdmin:
         await self.bot.say("I removed ``{}`` from {}!".format(role, user))
         
     #Thanks to Discordian for the help with MassPromote/MassDemote
+    
+    @commands.command(pass_context=True, no_pm=True)
+    @checks.serverowner_or_permission(administrator=True)
+    async def masspromote(self, ctx, role: discord.Role):
+        """Mass promotes everyone in the server."""
+        await self.bot.say("I am currently starting to add everyone to ``{}``".format(role))
+        roletoadd = discord.utils.get(ctx.message.server.role, name=role)
+        for member in ctx.message.server.members:
+            await self.bot.add_roles(member, roletoadd)
+        await self.bot.say("Added role ``{}`` to everyone.".format(role)
+        
+    @commands.command(pass_context=True, no_pm=True)
+    @checks.serverowner_or_permission(administrator=True)
+    async def massdemote(self, ctx, role: discord.Role):
+        """Mass promotes everyone in the server."""
+        await self.bot.say("I am currently starting to add everyone to ``{}``".format(role))
+        roletoadd = discord.utils.get(ctx.message.server.role, name=role)
+        for member in ctx.message.server.members:
+            await self.bot.remove_roles(member, roletoadd)
+        await self.bot.say("Added role ``{}`` to everyone.".format(role)
+    
 
 
 
