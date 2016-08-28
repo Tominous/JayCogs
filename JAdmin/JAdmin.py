@@ -35,7 +35,7 @@ class JAdmin:
     @checks.serverowner_or_permissions(administrator=True)
     async def demote(self, ctx, role: discord.Role, user: discord.Member)
         await self.bot.remove_roles(user, role)
-        await self.bot.say("I added ``{}`` to {}!".format(role, user))
+        await self.bot.say("I removed ``{}`` from {}!".format(role, user))
 
 
 
